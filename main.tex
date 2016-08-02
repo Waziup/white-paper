@@ -1,0 +1,75 @@
+\documentclass{llncs}
+
+\usepackage[nocompress]{cite}
+\usepackage[english]{babel}
+%\usepackage{minted}
+\usepackage{array}
+\usepackage{url}
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+
+%common abbreviations
+\newcommand{\etal}{{\it et al.}}
+\newcommand{\etc}{{\it etc.}}
+\newcommand{\ie}{\emph{i.e.}}
+\newcommand{\eg}{{\em e.g.}}
+
+\newboolean{showcomments}
+\setboolean{showcomments}{true}
+
+\ifthenelse{\boolean{showcomments}}
+{ \newcommand{\mynote}[2]{
+    \fbox{\bfseries\sffamily\scriptsize#1}
+    {\small$\blacktriangleright$\textsf{\emph{#2}}$\blacktriangleleft$}}}
+{\newcommand{\mynote}[2]{}}
+
+\newcommand{\cdu}[1]{\mynote{Corentin}{#1}}
+\newcommand{\cd}[1]{\mynote{Charlotte}{#1}}
+\newcommand{\sfa}[1]{\mynote{Sabrine}{#1}}
+\newcommand{\todo}[1]{\mynote{TODO}{#1}}
+
+\makeatletter
+\let\@copyrightspace\relax
+\makeatother 
+
+\begin{document}
+
+\title{WAZIUP: An Internet of Things and Big Data platform to boost innovation in rural Africa}
+
+\author{Corentin Dupont\inst{1}}
+\institute{
+Create-Net
+via Alla Cascata, 56/D
+38123 Trento, Italy\\
+\and
+Easy Global Market
+Espace Beethoven
+1200 Route des lucioles
+06560 Valbonne, France\\
+\email{cdupont@create-net.org}
+\email{{charlotte.dupont,sabrine.fatnassi}@eglobalmark.com}
+}
+
+\date{\today}
+
+\maketitle
+
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+
+\input{intro}
+\input{platform}
+\input{implem}
+\input{deploy}
+\input{usecases}
+\input{related}
+\input{conclu}
+\input{acknowledgement}
+
+\bibliographystyle{unsrt}
+\bibliography{central-bibliography/bibliography}
+
+\end{document}
